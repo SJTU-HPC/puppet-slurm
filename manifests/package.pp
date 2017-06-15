@@ -4,10 +4,10 @@
 #
 class slurm::package (
   $ensure   = $slurm::package_ensure,
-  $package  = $slurm::package_name,
+  $packages  = $slurm::package_name,
 ) {
 
-  package { $package:
+  package { $packages:
     ensure => $ensure,
   }
 }

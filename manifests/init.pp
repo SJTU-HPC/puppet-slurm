@@ -13,7 +13,7 @@ class slurm (
   $config_partitions  = [],
   $cgroup_options     = hash([]),
   $dbd_config_options = hash([]),
-  $package_name       = 'slurm',
+  $package_name       = ['slurm', 'slurm-munge', 'slurm-pam_slurm', 'slurm-sjobexit', 'slurm-sjstat', 'slurm-seff'],
   $package_ensure     = 'installed',
   $service_name       = 'slurm',
   $service_ensure     = 'running',
