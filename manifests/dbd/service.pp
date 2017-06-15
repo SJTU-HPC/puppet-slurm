@@ -5,7 +5,7 @@
 class slurm::dbd::service (
   $ensure       = $slurm::dbd::service_ensure,
   $enable       = $slurm::dbd::service_enable,
-  $service      = 'slurm-llnl-slurmdbd',
+  $service      = 'slurmdbd',
 ) {
 
   service { $service:

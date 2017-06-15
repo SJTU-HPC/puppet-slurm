@@ -6,16 +6,16 @@
 # Full description of class slurm is in the README.
 #
 class slurm (
-  $config_directory   = '/etc/slurm-llnl',
+  $config_directory   = '/etc/slurm',
   $config_ensure      = 'present',
   $config_options     = hash([]),
   $config_nodes       = [],
   $config_partitions  = [],
   $cgroup_options     = hash([]),
   $dbd_config_options = hash([]),
-  $package_name       = 'slurm-llnl',
+  $package_name       = 'slurm',
   $package_ensure     = 'installed',
-  $service_name       = 'slurm-llnl',
+  $service_name       = 'slurm',
   $service_ensure     = 'running',
   $service_enable     = true,
   $service_account    = 'slurm',

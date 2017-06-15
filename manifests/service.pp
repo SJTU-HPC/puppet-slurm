@@ -6,7 +6,7 @@ class slurm::service (
   $ensure       = $slurm::service_ensure,
   $enable       = $slurm::service_enable,
   $service      = $slurm::service_name,
-  $service_cmd  = 'slurm-llnl',
+  $service_cmd  = 'slurm',
 ) {
 
   service { $service:
