@@ -13,7 +13,7 @@ class slurm (
   $config_partitions  = [],
   $cgroup_options     = hash([]),
   $dbd_config_options = hash([]),
-  $package_name       = ['slurm', 'slurm-contribs', 'slurm-pam_slurm', 'slurm-perlapi', 'slurm-slurmctld', 'slurm-slurmd', 'slurm-libpmi', 'slurm-devel'],
+  $package_name       = ['slurm', 'slurm-contribs', 'slurm-pam_slurm', 'slurm-perlapi', 'slurm-slurmctld', 'slurm-slurmd', 'slurm-libpmi', 'slurm-devel', 'slurm-contribs', 'slurm-example-configs'],
   $package_ensure     = 'installed',
   $service_name       = 'slurm',
   $service_ensure     = 'running',
