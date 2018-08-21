@@ -6,8 +6,5 @@ class slurm::package (
   $ensure   = $slurm::package_ensure,
   $packages  = $slurm::package_name,
 ) {
-
-  package { $packages:
-    ensure => $ensure,
-  }
+  ensure_packages($packages, {'ensure' => $ensure})
 }
