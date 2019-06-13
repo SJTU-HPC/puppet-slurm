@@ -5,6 +5,8 @@
 #
 # Full description of class slurm is in the README.
 #
+# @param package_name
+#
 class slurm (
   $config_directory   = '/etc/slurm',
   $config_ensure      = 'present',
@@ -13,13 +15,13 @@ class slurm (
   $config_partitions  = [],
   $cgroup_options     = hash([]),
   $dbd_config_options = hash([]),
-  $package_name       = ['slurm', 'slurm-contribs', 'slurm-pam_slurm', 'slurm-perlapi', 'slurm-slurmctld', 'slurm-slurmd', 'slurm-libpmi', 'slurm-devel', 'slurm-contribs', 'slurm-example-configs'],
+  $package_name       = $::slurm::params::package_name,
   $package_ensure     = 'installed',
   $service_name       = 'slurm',
   $service_ensure     = 'running',
   $service_enable     = true,
   $service_account    = 'slurm',
-) {
+) inherits ::slurm::params {
   anchor { 'slurm::begin': } ->
   class  { 'slurm::package': } ->
   class  { 'slurm::config': } ~>
