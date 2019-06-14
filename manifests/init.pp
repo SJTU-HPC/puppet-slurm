@@ -21,6 +21,7 @@ class slurm (
   $service_ensure     = 'running',
   $service_enable     = true,
   $service_account    = 'slurm',
+  $gres               = '',
 ) inherits ::slurm::params {
   anchor { 'slurm::begin': } ->
   class  { 'slurm::package': } ->

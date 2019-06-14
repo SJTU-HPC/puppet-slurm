@@ -12,6 +12,7 @@ class slurm::config (
   $service_account  = $slurm::service_account,
   $config_file      = 'slurm.conf',
   $cgroup_file      = 'cgroup.conf',
+  $gres_file        = 'gres.conf',
 ) {
 
   validate_hash($options)
@@ -31,6 +32,19 @@ class slurm::config (
     mode    => '0444',
     owner   => $service_account,
     content => template('slurm/cgroup.conf.erb')
+  }
+
+  file { "${directory}/${gres_file}":
+    ensure  => $ensure,
+    mode    => '0444',
+    owner   => $service_account,
+    content => template('slurm/cgroup.conf.erb')
+  }
+
+  file { "${directory}/${gres_file}":
+    ensure  => $ensure,
+    content => $slurm_gres,
+    owner   => $service_account,
   }
 
   #Release Agent Scripts
