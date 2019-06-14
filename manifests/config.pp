@@ -34,13 +34,6 @@ class slurm::config (
     content => template('slurm/cgroup.conf.erb')
   }
 
-  file { "${directory}/${cgroup_file}":
-    ensure  => $ensure,
-    mode    => '0444',
-    owner   => $service_account,
-    content => template('slurm/cgroup.conf.erb')
-  }
-
   file { "${directory}/${gres_file}":
     ensure  => $ensure,
     content => $slurm_gres,
