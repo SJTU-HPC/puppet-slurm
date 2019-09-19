@@ -8,7 +8,7 @@ class slurm::dbd (
   $package_ensure     = 'installed',
   $service_ensure     = 'running',
   $service_enable     = true,
-  $service_account    = 'slurm',
+  $service_account    = 'root',
 ) {
   anchor { 'slurm::dbd::begin': } ->
   class  { 'slurm::dbd::package': } ->

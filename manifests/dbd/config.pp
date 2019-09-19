@@ -13,7 +13,6 @@ class slurm::dbd::config (
   file { "${directory}/${config_file}":
     ensure  => $ensure,
     mode    => '0440',
-    owner   => $service_account,
     content => template('slurm/slurmdbd.conf.erb')
   }
 }

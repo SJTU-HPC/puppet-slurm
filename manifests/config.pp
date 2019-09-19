@@ -23,21 +23,18 @@ class slurm::config (
   file { "${directory}/${config_file}":
     ensure  => $ensure,
     mode    => '0444',
-    owner   => $service_account,
     content => template('slurm/slurm.conf.erb')
   }
 
   file { "${directory}/${cgroup_file}":
     ensure  => $ensure,
     mode    => '0444',
-    owner   => $service_account,
     content => template('slurm/cgroup.conf.erb')
   }
 
   file { "${directory}/${gres_file}":
     ensure  => $ensure,
     content => $slurm_gres,
-    owner   => $service_account,
   }
 
   #Release Agent Scripts
