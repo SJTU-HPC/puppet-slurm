@@ -35,7 +35,7 @@ class slurm::config (
 
   file { "${directory}/${gres_file}":
     ensure  => $ensure,
-    content => $slurm_gres,
+    content => $gres_options,
   }
 
   #Release Agent Scripts
