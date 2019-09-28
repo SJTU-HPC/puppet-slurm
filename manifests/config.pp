@@ -13,6 +13,7 @@ class slurm::config (
   $config_file      = 'slurm.conf',
   $cgroup_file      = 'cgroup.conf',
   $gres_file        = 'gres.conf',
+  $gres_options     = $slurm::gres_options,
 ) {
 
   validate_hash($options)
