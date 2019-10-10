@@ -8,6 +8,7 @@ class slurm::dbd (
   $package_ensure     = 'installed',
   $service_ensure     = 'running',
   $service_enable     = true,
+  $config_directory   = '/etc/slurm',
   $service_account    = 'root',
 ) {
   anchor { 'slurm::dbd::begin': } ->
