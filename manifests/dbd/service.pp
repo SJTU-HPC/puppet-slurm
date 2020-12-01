@@ -13,9 +13,5 @@ class slurm::dbd::service (
     enable      => $enable,
     hasstatus   => true,
     hasrestart  => true,
-    status      => "/usr/bin/service ${service} status",
-    start       => "/usr/bin/service ${service} start",
-    stop        => "/usr/bin/service ${service} stop",
-    restart     => "/usr/bin/service ${service} restart",
   }
 }
